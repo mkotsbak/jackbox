@@ -1,11 +1,12 @@
 package jackbox.persistence.json;
 
+import jackbox.MethodRecording;
+
+import java.io.IOException;
 import java.io.Reader;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 import java.util.Arrays;
-
-import jackbox.MethodRecording;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -19,7 +20,7 @@ import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 
 public class JSONPersister implements Persister {
-    public void persistToWriter(MethodRecording recording, Appendable output) {
+    public void persistToWriter(MethodRecording recording, Appendable output) throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().registerTypeAdapter(
                 MethodRecording.class, new MethodRecordingTypeAdaptor())
                 .registerTypeAdapter(Method.class, new MethodTypeAdapter())

@@ -1,20 +1,21 @@
 package jackbox.persistence.json;
 
+import static org.fest.assertions.Assertions.assertThat;
 import jackbox.MethodRecording;
 import jackbox.example.Entity;
 import jackbox.example.ExampleDependency;
 import jackbox.example.ExampleRecordedObject;
-import org.junit.Test;
 
-import com.google.gson.JsonParseException;
-
+import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.fest.assertions.Assertions.assertThat;
+import org.junit.Test;
+
+import com.google.gson.JsonParseException;
 
 public class JSONPersistenceTest {
 
@@ -154,11 +155,11 @@ public class JSONPersistenceTest {
             .isEqualTo(recording.getDependencyMethodRecordings(invokedMethodOnDependency));
     }
 
-    private MethodRecording persistAndRestore(MethodRecording recording) {
+    private MethodRecording persistAndRestore(MethodRecording recording) throws IOException {
         return persistAndRestore(recording, false);
     }
 
-    private MethodRecording persistAndRestore(MethodRecording recording, boolean debug) {
+    private MethodRecording persistAndRestore(MethodRecording recording, boolean debug) throws IOException {
         Persister persister = new JSONPersister();
         StringWriter output = new StringWriter();
         persister.persistToWriter(recording, output);
