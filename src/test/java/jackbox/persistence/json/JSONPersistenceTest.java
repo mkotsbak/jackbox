@@ -5,6 +5,7 @@ import jackbox.MethodRecording;
 import jackbox.example.Entity;
 import jackbox.example.ExampleDependency;
 import jackbox.example.ExampleRecordedObject;
+import jackbox.persistence.Persister;
 
 import java.io.IOException;
 import java.io.StringReader;

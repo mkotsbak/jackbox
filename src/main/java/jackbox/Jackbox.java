@@ -1,6 +1,6 @@
 package jackbox;
 
-import jackbox.persistence.json.Persister;
+import jackbox.persistence.Persister;
 
 import java.io.File;
 import java.io.FileWriter;

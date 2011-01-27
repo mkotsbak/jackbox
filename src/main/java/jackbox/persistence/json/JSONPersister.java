@@ -1,6 +1,7 @@
 package jackbox.persistence.json;
 
 import jackbox.MethodRecording;
+import jackbox.persistence.Persister;
 
 import java.io.IOException;
 import java.io.Reader;

@@ -3,7 +3,7 @@ package jackbox.persistance.testgeneration;
 import static org.fest.assertions.Assertions.assertThat;
 import jackbox.MethodRecording;
 import jackbox.example.ExampleRecordedObject;
-import jackbox.persistence.json.Persister;
+import jackbox.persistence.Persister;
 
 import java.io.IOException;
 import java.io.StringWriter;

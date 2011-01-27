@@ -1,4 +1,4 @@
-package jackbox.persistence.json;
+package jackbox.persistence;
 
 import java.io.IOException;
 import java.io.Reader;
