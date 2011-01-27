@@ -34,8 +34,11 @@ public class PowermockTestGenerationTest {
     @Test
     public void shouldCallRecordedMethod() throws IOException {
         String generatedCode = generateTestCode(testRecording);
+
         assertThat(generatedCode).contains("." + testRecording.getMethod().getName() + "(")
         .contains("new " + testRecording.getTargetClass().getSimpleName());
+
+        assertThat(generatedCode).contains("(5, 6)"); // parameters
     }
 
     /**
