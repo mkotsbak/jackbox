@@ -2,6 +2,7 @@ package jackbox.example;
 
 import jackbox.Jackbox;
 import jackbox.example.methodannotation.MethodAnnotationDemoService;
+import jackbox.persistance.testgeneration.PowerMockTestGenerator;
 import jackbox.persistence.json.JSONPersister;
 
 import java.io.File;
@@ -20,5 +21,6 @@ public class IntegrationExec {
         service.doSomething();
 
         Jackbox.saveRecording( new JSONPersister(), new File("testrecording.json") );
+        Jackbox.saveRecording( new PowerMockTestGenerator(), new File("TestrecordingTest.java") );
     }
 }
